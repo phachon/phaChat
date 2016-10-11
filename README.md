@@ -7,6 +7,7 @@
 ## Description 简介
 一个简单的 web 聊天室, 采用 node.js 编写，基于 express + mysql + socket 实现的在线多人web 聊天系统，包括用户的登陆注册，用户的个
 人信息修改,目的是为了更加深入学习了解 node.js 和 websocket 技术，给初学者一个练习的小项目。有兴趣的同学可以继续完善（用户的头像上传，创建聊天群，消息保存等）
+
 ## Install 安装
 
 - 环境
@@ -40,15 +41,20 @@
 ## 界面效果
 ![image](https://github.com/phachon/phaChat/public/images/chat.jpg)
 
-## 其他
+## 扩展
 
- 功能扩展
-  - 创建聊天室
-  - 用户修改头像
-  - 发送表情
-  - model层优化
+- 创建聊天室
+- 用户修改头像
+- 发送表情
+- model层优化
 
+## License
 
+MIT
+
+## 反馈
+
+欢迎提交意见和代码，联系方式 phachon@163.com
 Thanks...
 ---------
 Create By phachon@163.com
