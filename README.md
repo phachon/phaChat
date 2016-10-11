@@ -39,7 +39,7 @@
 - server.js socket 服务端
 
 ## 界面效果
-![image](https://github.com/phachon/phaChat/public/images/chat.jpg)
+![image](https://raw.githubusercontent.com/phachon/phaChat/master/public/images/chat.jpg)
 
 ## 扩展
 
