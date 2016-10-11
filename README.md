@@ -48,13 +48,14 @@
 - 发送表情
 - model层优化
 
+## 反馈
+
+欢迎提交意见和代码，联系方式 phachon@163.com
+
 ## License
 
 MIT
 
-## 反馈
-
-欢迎提交意见和代码，联系方式 phachon@163.com
-Thanks...
+Thanks
 ---------
 Create By phachon@163.com
