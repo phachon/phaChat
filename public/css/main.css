@@ -1,0 +1,236 @@
+
+@import 'http://fonts.googleapis.com/css?family=Noto+Sans';
+body {
+    padding: 0;
+    margin: 0;
+    background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+    background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+}
+
+/* 聊天标题 */
+.chat-header {
+    margin-bottom: 20px;
+    color: #92999D;
+}
+
+/* 通讯录 */
+.chat-list {
+    background-color: #194256;
+    border-color: #194256;
+}
+
+.chat-list h4 {
+    color: #92999D;
+}
+
+.chat-list input {
+    background-color: #18364E;
+    border-color: #18364E;
+}
+
+/* 账号列表 */
+.account-list {
+    height: 510px;
+    margin: 0 auto 0 auto;
+    padding: 0 1px 0 0;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.account-list a {
+    background-color: #194256;
+    border-color: #194256;
+}
+
+.account-list a img {
+    width: 30px;
+    height: 30px;
+}
+.account-list a label {
+    margin-left: 15px;
+    color: #92999D;
+}
+.account-list a span {
+    float: right;
+    margin-top: 5px;
+}
+
+.chat-list-footer {
+    color: #92999D;
+}
+
+/* 聊天面板 */
+.chat-thread {
+    margin: 0 auto 0 auto;
+    padding: 0 10px 0 0;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 610px;
+}
+
+.chat-thread ul {
+    padding-left: 15px;
+}
+.chat-thread li {
+    position: relative;
+    clear: both;
+}
+.chat-thread li span {
+    clear: both;
+    display: inline-block;
+    padding: 10px 30px 10px 20px;
+    font: 15px/20px 'Noto Sans', sans-serif;
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+}
+
+.chat-thread li img {
+    width: 30px;
+    height: 30px;
+}
+
+.position-right {
+    float: right;
+}
+
+.position-right span {
+    animation: show-chat-right 0.15s 1 ease-in;
+    -moz-animation: show-chat-right 0.15s 1 ease-in;
+    -webkit-animation: show-chat-right 0.15s 1 ease-in;
+    color: #0EC879;
+    margin: 0 16px 20px 0;
+}
+
+.position-right span:after {
+    position: absolute;
+    top: 15px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid rgba(25, 147, 147, 0.2);
+    border-right: 15px solid transparent;
+    /*right: 35px;*/
+    /* append 小 4px*/
+    right: 31px;
+}
+
+/* left */
+.position-left {
+    float: left;
+}
+
+.position-left span {
+    animation: show-chat-left 0.15s 1 ease-in;
+    -moz-animation: show-chat-left 0.15s 1 ease-in;
+    -webkit-animation: show-chat-left 0.15s 1 ease-in;
+    color: #0AD5C1;
+    margin: 0 0 20px 16px;
+}
+.position-left span:before {
+    position: absolute;
+    float: left;
+    top: 15px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid rgba(25, 147, 147, 0.2);
+    border-left: 15px solid transparent;
+    /*left: 35px;*/
+    /* append 小 4px*/
+    left: 31px;
+}
+
+/* 发送消息 */
+.message {
+    padding: 15px 0 0 10px;
+    margin-top: 5px;
+}
+
+/* Small screens */
+@media all and (max-width: 767px) {
+    .chat-thread {
+        width: 100%;
+        height: 600px;
+    }
+}
+@keyframes show-chat-left {
+    0% {
+        margin-left: -480px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+@-moz-keyframes show-chat-left {
+    0% {
+        margin-left: -480px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+@-webkit-keyframes show-chat-left {
+    0% {
+        margin-left: -480px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+@keyframes show-chat-right {
+    0% {
+        margin-right: -480px;
+    }
+
+    100% {
+        margin-right: 0;
+    }
+}
+@-moz-keyframes show-chat-right {
+    0% {
+        margin-right: -480px;
+    }
+
+    100% {
+        margin-right: 0;
+    }
+}
+@-webkit-keyframes show-chat-right {
+    0% {
+        margin-right: -480px;
+    }
+
+    100% {
+        margin-right: 0;
+    }
+}
+
+/* footer */
+.footer {
+    margin-top: 20px;
+}
+
+.footer p {
+    color: #92999D;
+}

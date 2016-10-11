@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="a web chat system by node.js">
+    <meta name="author" content="phachon">
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/bootstrap-theme.css" rel="stylesheet"/>
+</head>
+<body>
+<br/><br/><br/><br/><br/>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body center">
+                    <h3 align="center"><%= message %></h3>
+                    <hr/>
+                    <div align="center">
+                        <a class="btn btn-danger btn-big"  href="/chat/index"> 返回>> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    setTimeout('(function(uri) {location.href = uri;})("/chat/index")',  2 * 1000);
+</script>
+</body>
+</html>
