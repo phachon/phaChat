@@ -13,7 +13,7 @@
     "cookie-parser": "^1.4.3",
     "crypto": "0.0.3",
     "debug": "~2.2.0",
-    "ejb": "3.8.9",
+    "ejs": "^2.5.2",
     "express": "~4.13.4",
     "express-session": "^1.14.1",
     "fs": "0.0.1-security",
