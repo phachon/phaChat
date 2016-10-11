@@ -1,5 +1,5 @@
 #-----------------------------------
-#- pha chat Video database
+#- pha chat database
 #- author phachon@163.com
 #-----------------------------------
 
