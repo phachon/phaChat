@@ -15,7 +15,8 @@
  - node v6.*
  - express 4.3.*
  - mysql 5.5.*
-
+ - redis 2.8.*
+ 
 - 使用
 
   进入根目录，phaChat
