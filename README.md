@@ -22,6 +22,7 @@
   进入根目录，phaChat
 
   ```
+  npm install
   npm start //开启聊天室客户端
   node server //开启聊天室服务端
   ```  
