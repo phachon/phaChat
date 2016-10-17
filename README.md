@@ -15,12 +15,14 @@
  - node v6.*
  - express 4.3.*
  - mysql 5.5.*
-
+ - redis 2.8.*
+ 
 - 使用
 
   进入根目录，phaChat
 
   ```
+  npm install
   npm start //开启聊天室客户端
   node server //开启聊天室服务端
   ```  
