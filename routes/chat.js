@@ -11,10 +11,17 @@ var UserModel = require('../models/userModel');
  * index
  */
 router.get('/', author.isLogin, function(req, res, next) {
-  res.render(
-      'chat',
-      { title: 'phachat聊天室', user: req.session.user}
-  );
+    var userModel = new UserModel();
+    userModel.getUsers(function (users) {
+        res.render(
+            'chat',
+            {
+                title: 'phachat聊天室',
+                users: users,
+                user: req.session.user
+            }
+        );
+    });
 });
 
 router.get('/index', author.isLogin, function(req, res, next) {

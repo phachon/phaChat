@@ -9,7 +9,6 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
 
     <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
@@ -40,7 +39,65 @@
         </div>
     </div>
 </nav>
-
-
+<div style="margin-top: 50px;padding: 20px 100px;">
+    <div class="jumbotron well">
+        <h2>
+            phaChat
+        </h2>
+        <p class="lead">
+            一个简单的 web 聊天室, 采用 node.js 编写，基于 express + mysql + socket 实现的在线多人web 聊天系统，包括用户的登陆注册，用户的个 人信息修改,目的是为了更加深入学习了解 node.js 和 websocket 技术，给初学者一个练习的小项目。有兴趣的同学可以继续完善（用户的头像上传，创建聊天群，消息保存等）
+        </p>
+        <p>
+            <a class="btn btn-sm btn-primary" href="https://github.com/phachon/phaChat" role="button">源代码</a>
+        </p>
+    </div>
+    <div class="row" style="margin: 0 auto">
+    <div class="span4 jumbotron well" style="width: 345px;height:350px;float: left;">
+        <h3>安装</h3>
+        <hr>
+        <ul>
+            <li>npm 3.*</li>
+            <li>node v6.*</li>
+            <li>express 4.3.*</li>
+            <li>mysql 5.5.*</li>
+            <li>redis 2.8.*</li>
+            <li>npm install</li>
+            <li>npm start   //开启web聊天室</li>
+            <li>node server //开启聊天服务端</li>
+        </ul>
+    </div>
+    <div class="span4 jumbotron well" style="width: 380px;height:350px; float: left; margin-left: 20px;">
+        <h3>目录</h3>
+        <hr>
+        <ul>
+            <li>config 配置文件信息</li>
+            <li>core 一些公共的核心类</li>
+            <li>document 文档目录 sql文件</li>
+            <li>models 数据model类</li>
+            <li>public 公共的静态文件(css, js, images)目录</li>
+            <li>routes 路由</li>
+            <li>views 模板文件</li>
+            <li>app.js 客户端全局配置</li>
+            <li>package.json node 模块包信息</li>
+            <li>server.js socket 服务端</li>
+        </ul>
+    </div>
+    <div class="span4 jumbotron well" style="width: 380px;height:350px; float: left;margin-left: 20px;">
+        <h3>继续扩展</h3>
+        <hr>
+        <ul>
+            <li>增加创建聊天室，创建群聊功能</li>
+            <li>用户可自定义头像，修改头像</li>
+            <li>聊天可发送表情及图片</li>
+            <li>聊天记录保存上传</li>
+            <li>实现视频聊天功能</li>
+        </ul>
+    </div>
+    </div>
+    <div class="footer">
+        <hr>
+        <p>© phachon@163.com  2016</p>
+    </div>
+</div>
 </body>
 </html>
