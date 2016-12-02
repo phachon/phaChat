@@ -96,12 +96,12 @@
                 <div class="chat-thread">
                     <ul id="chat_ul"></ul>
                 </div>
-                <form method="post" action="/chat/chat">
+                <form method="post" action="/chat/chat" onkeydown="if(event.keyCode == 13) return false;">
                 <div class="input-group message">
                     <input type="text" class="form-control" name="message" placeholder="输入聊天信息" required="required">
                     <input type="hidden" class="form-control" name="user_id" value="<%= user.user_id %>" >
                       <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" onclick="Chat.submit(this.form)">发送</button>
+                        <button class="btn btn-info" id="send" type="button" onclick="Chat.submit(this.form)">发送</button>
                       </span>
                 </div>
                 </form>

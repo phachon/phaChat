@@ -31,6 +31,13 @@ var Chat = {
         this.socket.emit('join', this.userId);
 
         this.show();
+
+        $(document).keydown(function (e) {
+            var curKey = e.which;
+            if(curKey == 13) {
+                $("#send").click();
+            }
+        });
     },
 
     /**
@@ -40,11 +47,16 @@ var Chat = {
     submit: function (element) {
         var message = $('input[name="message"]').val();
 
+        if(message == '' || message == undefined) {
+            return false;
+        }
         if(this.socket == null || !this.userId) {
             this.init();
         }
         //发送消息事件
         this.socket.emit('send', this.userId, message);
+        //清除消息
+        $('input[name="message"]').val('');
     },
 
     /**

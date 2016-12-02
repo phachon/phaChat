@@ -14,6 +14,7 @@ var index = require('./routes/index');
 var author = require('./routes/author');
 var chat = require('./routes/chat');
 var user = require('./routes/user');
+var about = require('./routes/about');
 
 var app = express();
 //设置 cookie
@@ -48,6 +49,8 @@ app.use('/author', author);
 app.use('/chat', chat);
 //user route
 app.use('/user', user);
+//about route
+app.use('/about', about);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

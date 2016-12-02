@@ -40,6 +40,7 @@ io.on('connection', function(socket) {
         }
         //给除自己之外的用户广播状态
         socket.broadcast.emit('userStatus', userId);
+        // socket.broadcast.to().emit('userStatus', userId);
         console.log('用户' + userId + '加入了聊天');
     });
 
