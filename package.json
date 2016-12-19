@@ -14,13 +14,16 @@
     "crypto": "0.0.3",
     "debug": "~2.2.0",
     "ejs": "^2.5.2",
+    "eventproxy": "^0.3.5",
     "express": "~4.13.4",
     "express-session": "^1.14.1",
     "fs": "0.0.1-security",
     "jade": "~1.11.0",
+    "log4js": "^1.0.1",
     "morgan": "~1.7.0",
     "mysql": "^2.11.1",
     "serve-favicon": "~2.3.0",
-    "socket.io": "^1.5.0"
+    "socket.io": "^1.5.0",
+    "validator": "^6.2.0"
   }
 }

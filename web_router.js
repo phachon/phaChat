@@ -5,9 +5,9 @@ var express = require('express');
 var router = express.Router();
 
 //controllers
-var index = require('./controllers/index');
-var author = require('./controllers/author');
-var chat = require('./controllers/chat');
+var index = require('./application/controller/index');
+var author = require('./application/controller/author');
+var chat = require('./application/controller/chat');
 
 //index
 router.get('/', index.index);
