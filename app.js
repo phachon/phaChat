@@ -7,16 +7,16 @@
  */
 global.DOCROOT = __dirname;
 global.APPPATH = global.DOCROOT + "/application/";
-global.CONTROLLER = global.APPPATH + "/controller/";
-global.SERVICE = global.APPPATH + "/service/";
-global.MODEL = global.APPPATH + "/model/";
-global.DAO = global.APPPATH + "/dao/";
 global.COREPATH = global.DOCROOT + "/core/";
-global.LOGPATH = global.DOCROOT + "/log/";
+global.LOGPATH = global.DOCROOT + "/logs/";
+global.CONFPATH = global.DOCROOT + "/config/";
 global.PUBLIC = global.DOCROOT + "/public/";
 global.VIEW = global.DOCROOT + "/views/";
-var env = process.env.NODE_ENV == '' ? 'development' : process.env.NODE_ENV;
-global.CONFPATH = global.DOCROOT + env;
+global.CONTROLLER = global.APPPATH + "/controller/";
+global.BUSINESS = global.APPPATH + "/business/";
+global.MODEL = global.APPPATH + "/model/";
+global.DAO = global.APPPATH + "/dao/";
+global.ENV = process.env.NODE_ENV || "development";
 
 /**
  * 加载module
@@ -24,13 +24,15 @@ global.CONFPATH = global.DOCROOT + env;
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require(global.COREPATH + "logger");
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var bodyParser = require('body-parser');
+var errorHandler = require('errorhandler');
 var config = require('config');
 var fs = require('fs');
+var container = require(global.COREPATH + 'container');
+var logger = container.core('logger');
 
 /**
  * 路由配置文件
@@ -54,6 +56,11 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 /**
+ * 日志中间件 - 加载访问日志
+ */
+app.use(container.core('logger').access());
+
+/**
  * cookie 中间件
  */
 app.use(cookieParser());
@@ -62,10 +69,10 @@ app.use(cookieParser());
  * session 中间件
  */
 app.use(session({
-  store: new RedisStore(config.get('redis.session')),
+  store: new RedisStore(container.system('config').get('session.redis')),
   resave:false,
   saveUninitialized:false,
-  secret: 'phachat'
+  secret: config.get("session.secret")
 }));
 
 /**
@@ -93,17 +100,32 @@ app.use(express.static(global.PUBLIC));
  */
 app.use('/', webRouter);
 
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+/**
+ * 错误处理
+ */
+if(config.get("debug")) {
+  //捕获异常信息(显示html并打印)
+  app.use(errorHandler({ showStack: true, dumpExceptions: true }));
+} else {
+  app.use(function(err, req, res, next) {
+    logger.error(err);
+    res.status(err.status || 500);
+    res.render('error', {
+      message: global.ENV === 'production' ? '请求出错' : err.message,
+      error: global.ENV === 'production' ? {} : err
+    });
+  });
+}
 
+/**
+ * 监听端口
+ */
 if(!module.parent) {
-  app.listen(3000, function () {
-    logger.info('phachat listening on port', 3000);
-    logger.info('You can debug your app with http://127.0.0.1:3000');
+  app.listen(config.get("port"), function () {
+    logger.info('phachat listening on port', config.get("port"));
+    logger.info('you can debug your app with http://'+config.get("host")+':' +config.get("port"));
     logger.info('love you...');
   });
 }
+
 module.exports = app;

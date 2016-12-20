@@ -1,0 +1,58 @@
+{
+    "debug": true,
+    "host": "127.0.0.1",
+    "port": 3000,
+
+    "mysql": {
+        "phachat": {
+            "host": "127.0.0.1",
+            "port": 3306,
+            "user": "root",
+            "password": "123456",
+            "charset": "utf8",
+            "database": "phachat"
+        }
+    },
+
+    "session": {
+        "redis": {
+            "host": "127.0.0.1",
+            "port": 6379,
+            "db": 2,
+            "ttl": 86400
+        },
+        "secret": "phachat"
+    },
+
+    "logger":{
+        "appenders":[
+            {
+                "category":"console",
+                "type":"console"
+            },
+            {
+                "category":"access",
+                "type": "file",
+                "filename": "logs/access.log",
+                "maxLogSize": 104857500,
+                "backups": 3
+            },
+            {
+                "category":"error",
+                "type": "file",
+                "filename": "logs/error.log",
+                "maxLogSize": 104857500,
+                "backups": 4
+            },
+            {
+                "category":"debug",
+                "type": "file",
+                "filename": "logs/debug.log",
+                "maxLogSize": 104857500,
+                "backups": 1
+            }
+        ],
+
+        "replaceConsole": true
+    }
+}

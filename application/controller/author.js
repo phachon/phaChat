@@ -4,7 +4,8 @@
  */
 var validator  = require('validator');
 var eventproxy  = require('eventproxy');
-var prompt = require('../../common/prompt');
+var prompt = require(global.COREPATH + 'prompt');
+var Container = require(global.COREPATH + 'container');
 
 /**
  * 登录页
@@ -34,6 +35,11 @@ exports.login = function (req, res, next) {
     if(!password) {
         return ep.emit('login_error', '密码不能为空');
     }
-    
+
+    try {
+        Container.business('author').login(username, password);
+    }catch(e) {
+        console.log(e);
+    }
     return ep.emit('login_error', '密码不能为空');
 };
