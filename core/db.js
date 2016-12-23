@@ -53,11 +53,6 @@ function DB() {
         return this;
     };
 
-    this.or_where = function (column, sign, value) {
-        this.sql += ' or '+ column + sign + "'" + value + "'";
-        return this;
-    };
-
     this.set = function (columns) {
         var sqlInfo = [];
         for(var key in columns) {
@@ -105,5 +100,6 @@ DB.prototype.execute = function (base, callback) {
     var database = new Database(base);
     database.query(this.sql, callback);
 };
+var db = new DB();
 
-module.exports = DB;
+module.exports = db;

@@ -9,9 +9,10 @@ var logger = Container.core('logger');
  * login
  * @param username
  * @param password
+ * @param callback
  */
-exports.login = function (username, password) {
+exports.login = function (username, password, callback) {
 
     logger.debug('开始登录 business');
-    Container.dao('user').getUserByUsername(username);
+    Container.dao('user').getUserByUsername(username, callback);
 };

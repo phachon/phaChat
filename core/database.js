@@ -4,6 +4,7 @@
  */
 var mysql = require('mysql');
 var config = require('config');
+var eventproxy  = require('eventproxy');
 
 
 function Database(database) {

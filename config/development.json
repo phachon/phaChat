@@ -27,7 +27,6 @@
     "logger":{
         "appenders":[
             {
-                "category":"console",
                 "type":"console"
             },
             {
