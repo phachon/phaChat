@@ -3,10 +3,12 @@
 #- author phachon@163.com
 #-----------------------------------
 
-#use
+# create database
+create DATABASE IF NOT EXISTS phachat CHARSET utf8;
+
 use phachat;
 
-#user 表
+# user 表
 DROP TABLE IF EXISTS `chat_user`;
 CREATE TABLE `chat_user` (
   `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id',
