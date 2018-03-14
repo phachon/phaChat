@@ -32,6 +32,7 @@
     打开 config/default.json, 修改 mysql 和 redis 的账号密码配置
 
 4. 启动
+
     请保证 mysql, redis 是开启状态，进入代码根目录 phaChat
     ```
     npm install
