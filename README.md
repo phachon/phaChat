@@ -10,22 +10,35 @@
 
 ## Install 安装
 
-- 环境
- - npm 3.*
- - node v6.*
- - express 4.3.*
- - mysql 5.5.*
- - redis 2.8.*
- 
+1. 环境准备
+
+    - npm 3.*
+    - node v6.*
+    - express 4.3.*
+    - mysql 5.5.*
+    - redis 2.8.*
+
+    **软件的安装请自行查找资料**
+
+2. 创建数据库
+    ```
+    # 进入代码 document 目录, 执行下面命令（如果提示 mysql 找不到，请将 mysql 加入环境变量）
+    mysql -u root -padmin -e "source phachat.sql"
+    # root 为 mysql 账号，admin 为 mysql 密码
+    ```
+
+3. 修改配置文件
+    打开 config/default.json, 修改 mysql 和 redis 的账号密码配置
+
+4. 启动
+    请保证 mysql, redis 是开启状态，进入代码根目录 phaChat
+    ```
+    npm install
+    npm start //开启聊天室客户端
+    node server //开启聊天室服务端
+    ```
+
 - 使用
-
-  进入根目录，phaChat
-
-  ```
-  npm install
-  npm start //开启聊天室客户端
-  node server //开启聊天室服务端
-  ```  
   浏览器输入 http://127.0.0.1:3000/chat/index,
     
 ## 目录介绍
